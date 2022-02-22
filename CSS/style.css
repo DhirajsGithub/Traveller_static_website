@@ -1,0 +1,662 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+/* universary apn ne :default padding and margin jo browser provide karta hain use hata diya
+and box-sizing border-box kiya taki apne element ka content border ke samit hi rahe */
+
+/* ########################## html element styling ########################## */
+html{
+    font-size: 62.5%;
+    /* to make our list responsive  */
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;;
+    /* font-size: 62.5%; */
+    /* line-height: 1.7rem; */
+}
+
+ul li {
+    list-style: none;
+
+}
+
+a{
+    text-decoration: none;
+}
+/* only possible when we select a can't access text-decoration and color and all that properties for link with using specificity and classes  */
+
+p, li{
+    font-size: 1.6rem;
+    margin-bottom: 0.5em;
+    letter-spacing: 0.15em;
+}
+
+h1, h2, h3{
+    margin-bottom: 0.5em;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+}
+
+/* ######################## utility classes ############################ */
+.container{
+    max-width: 1100px;
+    width: 90%;
+    /* width 90% matlab aju baju space rahegi hi agar apn browser ko minismise bhi kyun na karen  */
+    margin: 0 auto;
+    /* upar niche margin 0 and aju baju margin auto */
+}
+.lg-heading{
+    font-size: 3.5rem;
+}
+.md-heading{
+    font-size: 2.2rem;
+}
+.text-red{
+    color:#e63946;
+}
+.text-light{
+    color: #f4f4f4;
+}
+.text-black{
+    color: #333;
+}
+.text-grey{
+    color: #555555;
+}
+.bg-dark{
+    background-color: #263238;
+}
+.btn{
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0.5em 0;
+}
+.btn-primary{
+    background-color: white;
+    border-radius: 10em;
+    color: #e63946 !important;
+
+}
+.btn-primary:hover{
+    background-color: #ddd;
+}
+.btn-secondary{
+    color: #e63946 !important;
+    /* specificity showcase walon ki jyada thi toh woh btn ki style(color) ko hinder kr rahe the */
+    border: 2px solid #e63946;
+    padding: 1rem 2rem;
+    border-radius: 2em;
+}
+
+.btn-secondary:hover{
+    background-color: #fcf3f2;
+}
+
+
+/* ########################## header styling ########################## */
+
+.header{
+    /* border: 4px solid green; */
+    height: 95vh;
+    background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/header-image.jpg');
+    /* syntax dekho url ka .. isliye lagaye ki iss folder ke piche yek folder hain / lagake uss folder ko choose kiys fir / lagake uss folder ki file select ki  */
+    /* alpha value matlab woh teen zeros ke bad by default 1 rahati hain matalb puri opacity of rgba(0,0,0) matlab pura black, we set it to 0.5 matlab thoda opacity kam  */
+    background-position: center;
+    /* hamesha center of image ko manate huae agar browser ki size kaam jyada bhi karege toh centre of img apn ko dikhayi dega  */
+    /* background-position: top; */  
+    /* background-size: contain;     */       /* aju baju thoda image ka portion ayega fir bichmain puri image ayegi*/
+    background-size: cover;      /*pure image ko cover karega*/
+    background-repeat: no-repeat;
+    position: relative;
+    
+}
+
+
+
+.navbar{
+    /* border: 2px solid white; */
+    padding: 1rem;
+}
+/* .header .navbar .logo, .nav-items a{
+    color: white;
+} */
+.navbar .logo{
+    float: left;
+
+}
+.navbar .nav-items{
+    float: right; 
+    margin-top: 1rem;
+    padding-bottom: 0.3rem;
+}
+/* remember yaha tak woh list walen items inline the  */
+
+.navbar .nav-item{
+    /* remember nav-item ko liya ha na ki nav-items ko  */
+    /* specificity imp hain inline-block main change karne ke liye  */
+    display: inline-block;
+    margin: 1rem;  
+    /* inline ke property rahate huae left right padding ayegi  */
+    text-transform: uppercase;
+}
+
+.navbar a:link, a:visited{
+    color: #f4f4f4;
+}
+.navbar a:hover{
+    text-decoration: underline;
+}
+
+.navbar::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.lg-heading{
+    font-weight:600;
+    text-transform: uppercase;
+}
+.header-content{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2));
+    /* to make the background thoda dark take opacity/ alpha channel to 0.2  */
+}
+.header-content p{
+    text-transform: uppercase;
+}
+
+/* ############################# showcase section styling ############################## */
+.showcase{
+    background: #ddd;
+    padding: 10rem 0;
+}
+.row{
+    height: 350px;
+    background-color: #fff;
+    /* box-shadow: horizontal-offset vertical-offset blur spread color ; */
+    box-shadow: 0px 0px 20px 0px #aaa;
+    /* box-shadow: yaisa dena hain ki pata nahi chalen box-shadow di huae hain ki nahi; we can also decrease the opacity on color pallete by selecting black color */
+}
+.row1{
+    margin-bottom: 10rem;
+
+    
+}
+.row1 .img-box, .row2 .text-box{
+    float: left;
+    width: 50%;
+}
+.row2 .img-box , .row1 .text-box{
+    float: right;
+    width: 50%;
+}
+.row .img-box{
+    height: 100%;
+}
+.row .text-box{
+    padding: 3rem;
+}
+/* clearing float of row  */
+.row::after{
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.showcase .container .row img{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* to make the aspect ratio of the image  we use objec-fit: cover; aspect ratio = ratio of width to it's height */
+
+}
+
+/* ###################### features section styling #################### */
+
+.features{
+    padding: 10rem 0;
+}
+.box-wrapper {
+    box-shadow: 5px 5px 20px 0px black;
+}
+.box{
+    width: 33.3333333%;
+    float: left;
+    /* border: 2px solid black; */
+    padding: 2rem;
+    text-align: center;
+}
+.box-wrapper::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.box-1, .box-3{
+    background-color: #263238;
+    color: #fff;
+}
+.box-2{
+    background: linear-gradient(25deg,#d64c7f,#ee4758 50%);
+    color: #fff;
+}
+
+/* ############### footer styling############ */
+.footer{
+    background-color: #263238;
+    color: #f4f4f4;
+    text-align: center;
+    padding: 2rem;
+}
+.social-media-links i{
+    margin: 2rem;
+    cursor: pointer;
+}
+.footer a{
+    text-decoration: none;
+    /* background-color: black; */
+    
+
+}
+
+/* ########################### about styling ######################## */
+
+.about{
+    padding: 5rem;
+}
+/* .about-heading{
+    border-bottom: 6px solid #e63946;
+} */
+/* we can also use pseudo elements to make boeder bottom like  */
+.about-heading::after{
+    content: "";
+    display: block;
+    /* note pseudo elements inline hote hain  */
+    border-bottom: 4px solid #e63946;
+    /* note border ki width puri 8px hogi upar 4 and nich 4  */
+    width: 100%;
+
+}
+
+/* .varities{
+    max-width: 600px;
+    width: 90%;
+    margin: 0 auto;
+} */
+.varities{
+    text-align: center;
+    margin-top: 2rem;
+}
+.column-1{
+    float: left;
+    width: 50%;
+}
+.column-2{
+    float: right;
+    width: 50%;
+    /* text-align: right; */
+}
+.varities::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+/* ticks apn pseudo classes se bhi laga sakte hain  */
+.varities li::before{
+    content: '\2713';
+    color:#e63946 ;
+    font-weight: bold;
+    padding-right: 1rem;
+}
+
+/* ############################### styling values ########################### */
+.counts{
+    text-align: center;
+    margin-top: 3rem;
+}
+.value{
+    width: 25%;
+    float: left;
+    font-weight: bold;
+}
+.counts span{
+    font-size: 3rem;
+    color: #e63946;
+}
+.counts::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.counts p{
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #555555;
+}
+
+/* ############################## banner sytling ############################ */
+
+.cta-banner{
+    border: 2px solid red;
+    margin-top: 3rem;
+    padding:1rem;
+    background: linear-gradient(25deg,#d64c7f,#ee4758 50%);
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.411);
+}
+.cta-banner-left{
+    float: left;
+    width: 60%;
+}
+.cta-banner-right{
+    float:right;
+    width: 40%;
+    text-align: right;
+}
+.cta-banner::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.cta-para{
+    font-weight: 700;
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+.cta-btn{
+    text-align: center;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 3rem;
+    border: 0.4rem solid #f4f4f4;
+    padding: 0.3em 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+
+/* ########################## contact page styling ####################### */
+.contact-form{
+    padding: 5rem 0;
+    font-size: 1.7rem;
+    background-color: #f7f7f7;
+}
+
+.form-wrapper{
+    /* border: 4px solid blue; */
+}
+.company-address{
+    height: 760px;
+    /* border: 3px dotted green; */
+    width: 49%;
+    float: left;
+    background-color: #fff;
+    padding: 1rem;
+}
+
+.form-wrapper::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.company-address h2{
+    display: inline;
+}
+.company-address i{
+    display: inline;
+    margin-right: 1rem;
+    color: #e63946;
+}
+.company-address img{
+    width: 90%;
+    min-height: 40rem;
+    object-fit: cover;
+    object-position: right;
+
+}
+.address-grp{
+    margin-bottom: 3rem;
+}
+
+
+/* ################################## form group ###############################  */
+.company-form{
+    height: 760px;
+    font-size: 1.6rem;
+    background-color: #fff;
+    /* border: 3px dotted red; */
+    width: 49%;
+    float: right;
+    padding: 1rem;
+}
+.company-form h1::after{
+    content: "";
+    width: 100%;
+    display: block;
+    border-bottom: 4px solid red;
+}
+.company-form label{
+    display: block;
+}
+.company-form input{
+    display: block;
+}
+
+.form-grp{
+    margin-bottom: 2rem;
+}
+.form-grp label::after{
+    content: "* ";
+    color: #e63946;
+}
+.company-form textarea{
+    width: 100%;
+    height: 300px;
+    padding: 2rem;
+}
+.company-form .form-btn{
+    display: block;
+    margin: 0 auto;
+    padding: 0.5em 3em;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #e63946;
+    border: none;
+}
+
+/* ######################################## Media queries ################################### */
+
+@media (max-width: 500px){
+    html{
+        font-size: 50%;
+        /* font-size: 8px; */
+    }
+    .navbar .nav-items, .navbar .logo{
+        float: none;
+        text-align: center;
+        display: block;
+        width: 100%;
+    }
+    .header-content .lg-heading{
+        font-size: 2.5rem;
+    }
+    .row{
+        height: auto;
+        width: 100%;
+    }
+    .row .img-box,
+    .row .text-box{
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    .features .box{
+        float: none;
+        width: 100%;
+        text-align: center;
+        box-shadow: 5px 5px 20px 0px black;
+    }
+    .features .box-2, 
+    .features .box-3{
+        margin-top: 7rem;
+    }
+    .box-wrapper {
+        box-shadow: none;
+    }
+    .cta-banner-left, .cta-banner-right{
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+    .cta-btn{
+        border: .1rem solid #f4f4f4;
+        text-align: center;
+        display: block;
+        font-size: 2rem;
+    }
+    .counts .value span{
+        font-size: 2rem;
+    }
+    .counts p{
+        font-size: 1rem;
+    }
+    .about .varities{
+        text-align: left;
+    }
+    .about .varities li{
+        font-size: 1rem;
+    }
+    .contact-form .company-address, .company-form{
+        float: none;
+        width: 100%;
+        height: auto;
+    }
+    .contact-form .company-form{
+        position: relative;
+        top: 5rem;
+        bottom: 2rem;
+        margin-bottom: 3rem;
+        
+    }
+    .contact-form .form-wrapper input{
+        width: 100%;
+    }
+
+}
+
+@media (min-width:501px)and (max-width:835px){
+    html{
+        font-size: 54%;
+        /* font-size: 8px; */
+    }
+    .navbar .nav-items, .navbar .logo{
+        float: none;
+        text-align: center;
+        display: block;
+        width: 100%;
+    }
+    .header-content .lg-heading{
+        font-size: 3.5rem;
+    }
+    .row{
+        height: auto;
+        width: 100%;
+    }
+    .row .img-box,
+    .row .text-box{
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    .features .box{
+        float: none;
+        width: 100%;
+        text-align: center;
+        box-shadow: 5px 5px 20px 0px black;
+    }
+    .features .box-2, 
+    .features .box-3{
+        margin-top: 7rem;
+    }
+    .box-wrapper {
+        box-shadow: none;
+    }
+    .cta-banner-left, .cta-banner-right{
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+    .cta-btn{
+        border: .3rem solid #f4f4f4;
+        text-align: center;
+        display: block;
+        font-size: 2.4rem;
+    }
+    .counts .value span{
+        font-size: 3rem;
+    }
+    .counts p{
+        font-size: 1.8rem;
+    }
+    .about .varities{
+        text-align: left;
+    }
+    .about .varities li{
+        font-size: 1.8rem;
+    }
+    .contact-form .company-address, .company-form{
+        float: none;
+        width: 100%;
+        height: auto;
+    }
+    .contact-form .company-form{
+        position: relative;
+        top: 5rem;
+        bottom: 2rem;
+        margin-bottom: 3rem;
+        
+    }
+    .contact-form .form-wrapper input{
+        width: 100%;
+    }
+}
+@media (min-width:836px) and (max-width:1200px){
+    html{
+        font-size:58%;
+    }
+    .cta-btn{
+        border: .3rem solid #f4f4f4;
+        text-align: center;
+        display: block;
+        font-size: 2.8rem;
+    }
+
+}
+
+/* landscape mode ka funda  */
+@media(orientation: landscape) and (max-height: 500px){
+    .header{
+        height: 90vmax;
+    }
+}
+/* note agar sifr orientation landscape karke karte height 90vmax the jab website deskptop pr khulti toh bada khula space ho jata
+hence necessary to mention max-height also  */
+
+
+
+
+
+/* use only 3 to 4 colors in whole website  */
+/* a in rgba is alpha channel and it is a color component that represents the degree of transparency (or opacity) of a color  */
